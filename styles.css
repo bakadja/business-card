@@ -1,0 +1,36 @@
+body {
+    margin: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #B5B5B5;
+}
+
+.avatar {
+    width: 150px;
+}
+
+.card {
+    width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background: #f9f9f9;
+    color: #1A365D;
+    border-top: 10px solid #1A365D;
+    border-bottom: 10px solid #B87333;
+    border-radius: 8px;
+}
+.text-gray {
+    color: #555555;
+}
+
+.border-blue {
+    border: 1px dotted blue;
+}
+.qrcode {
+     width: 120px;
+    height: 120px;
+    align-self: end;
+}
+
