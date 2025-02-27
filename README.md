@@ -79,7 +79,7 @@ This project is licensed under the **MIT License**
 
 ## Demo
 
-Check out the [live demo](https://your-username.github.io/business-card/) to see the business card in action.
+Check out the [live demo](https://businesscard.kevinngongang.dev/) to see the business card in action.
 
 ## Project Structure
 
