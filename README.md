@@ -7,7 +7,7 @@
 
 A simple and responsive digital business card built using HTML and CSS. It provides essential details such as name, profession, location, and a QR code linking to the user's portfolio or personal website.
 
-<!-- ![Business Card Preview](https://via.placeholder.com/800x400?text=Business+Card+Preview)-->
+![Business Card Preview](images/preview.png)
 
 ## Table of Contents
 - [Features](#features)
