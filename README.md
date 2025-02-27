@@ -1,6 +1,3 @@
-Looking at your instructions again, I notice there's a discrepancy between your title ("Business card") and the project name in the instructions ("Giving"). I'll create the README for a digital business card project as indicated by the content you've provided.
-
-<readme>
 # Business Card
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
@@ -96,4 +93,3 @@ business-card/
 ---
 
 Made with ❤️ by [Kevin](https://github.com/bakadja)
-</readme>
