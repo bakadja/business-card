@@ -47,14 +47,18 @@ class LandingPageTests(unittest.TestCase):
         ):
             self.assertIn(expected, self.page_text)
 
-        links = {attrs.get("href"): attrs for attrs in self.attributes_for("a")}
-        self.assertIn("https://www.kevinngongang.dev", links)
-        self.assertIn("https://github.com/bakadja", links)
-        self.assertIn("mailto:contact@kevinpaulidor.de", links)
+        links = self.attributes_for("a")
+        expected_actions = {
+            "button button-primary": "https://www.kevinngongang.dev",
+            "button button-secondary": "https://github.com/bakadja",
+        }
+        for css_class, href in expected_actions.items():
+            link = next(attrs for attrs in links if attrs.get("class") == css_class and attrs.get("href") == href)
+            self.assertEqual(link.get("target"), "_blank")
+            self.assertEqual(set(link.get("rel", "").split()), {"noopener", "noreferrer"})
 
-        for href in ("https://www.kevinngongang.dev", "https://github.com/bakadja"):
-            self.assertEqual(links[href].get("target"), "_blank")
-            self.assertEqual(set(links[href].get("rel", "").split()), {"noopener", "noreferrer"})
+        contact = next(attrs for attrs in links if attrs.get("href") == "mailto:contact@kevinpaulidor.de" and attrs.get("class") == "button button-secondary")
+        self.assertIsNotNone(contact)
 
     def test_document_has_accessible_semantics_and_images(self):
         html_attrs = self.attributes_for("html")
@@ -95,7 +99,9 @@ class LandingPageTests(unittest.TestCase):
 
     def test_styles_support_keyboard_focus_and_small_screens(self):
         self.assertRegex(self.css, r":focus-visible\s*\{")
-        self.assertRegex(self.css, r"@media\s*\([^)]*max-width\s*:")
+        breakpoint = re.search(r"@media\s*\(max-width:\s*(\d+)px\)", self.css)
+        self.assertIsNotNone(breakpoint)
+        self.assertGreaterEqual(int(breakpoint.group(1)), 900)
         self.assertEqual(self.css.count("{"), self.css.count("}"))
 
 

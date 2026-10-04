@@ -181,7 +181,7 @@ h1 {
   border-radius: 0.75rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .page-shell {
     align-items: start;
   }
