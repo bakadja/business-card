@@ -1,18 +1,18 @@
-# Business Card
+# Kevin Ngongang — Business Card
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![HTML](https://img.shields.io/badge/HTML-5-orange)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
 
-A simple and responsive digital business card built using HTML and CSS. It provides essential details such as name, profession, location, and a QR code linking to the user's portfolio or personal website.
+A static, responsive landing page for `kevinpaulidor.de`, built with HTML and CSS only. It includes Kevin Ngongang's contact details, portfolio and GitHub links, and a locally stored QR code pointing to `https://www.kevinngongang.dev`.
 
-![Business Card Preview](images/preview.png)
+The site has no runtime JavaScript, tracking, web fonts, or external application dependencies.
 
 ## Table of Contents
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Run locally](#run-locally)
+- [Checks](#checks)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -24,40 +24,23 @@ A simple and responsive digital business card built using HTML and CSS. It provi
 - **QR Code Integration** – Provides quick access to the portfolio or website.  
 - **Custom Styling** – Uses CSS for personalized fonts, colors, and layouts.  
 
-## Installation
+## Run locally
 
 1. **Clone the repository**:  
    ```bash
-   git clone https://github.com/your-username/business-card.git
+   git clone https://github.com/bakadja/business-card.git
    cd business-card
    ```  
 2. **Open the project** in any code editor (VS Code, Sublime Text, etc.).  
 3. **Launch the project** by opening `index.html` in a browser. 
 
-## Usage
+## Checks
 
-- Replace **`kevin.jpeg`** with your own profile image.  
-- Modify **`barecode.svg`** to link your portfolio or website.  
-- Customize the text in the `<h3>`, `<p>`, and `<h4>` tags with your personal details.  
-- Edit the **CSS file (`styles.css`)** to adjust colors, fonts, and layouts.  
-
-### Example Customization
-
-```html
-<!-- In index.html -->
-<h3>Jane Doe</h3>
-<p>Full-Stack Developer</p>
-<h4>San Francisco, CA</h4>
+```bash
+python3 -m unittest discover -s tests -v
 ```
 
-```css
-/* In styles.css */
-:root {
-  --primary-color: #4a6fff;
-  --secondary-color: #f5f5f5;
-  --text-color: #333333;
-}
-```
+The same checks run in GitHub Actions for every pull request. They validate the page content and links, accessibility basics, local assets, QR SVG, responsive CSS, and keyboard focus styles.
 
 ## Contributing
 
@@ -72,12 +55,6 @@ Contributions are welcome! To contribute:
 
 This project is licensed under the **MIT License**
 
----
-
-## Demo
-
-Check out the [live demo](https://businesscard.kevinngongang.dev/) to see the business card in action.
-
 ## Project Structure
 
 ```
@@ -86,7 +63,9 @@ business-card/
 ├── styles.css          # CSS styling
 ├── images/             # Directory for images and resources
 │   ├── kevin.jpeg      # Profile image
-│   └── barecode.svg    # QR code image
+│   └── qrcode.svg      # Locally generated portfolio QR code
+├── tests/              # Static site checks
+├── .github/workflows/  # Pull request validation
 └── README.md           # Project documentation
 ```
 

@@ -1,16 +1,58 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <div class="card">
-            <img class="avatar" src="images/kevin.jpeg">
-            <div >
-                <h3>Kevin Ngongang</h3>
-                <p class="text-gray">Frontend Developer</p>
-                <h4>Jena, Germany</h4>
-            </div>
-            <img class="qrcode" src="images/barecode.svg" alt="Access to the personal website and portfolio of Kevin, frontend developer">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kevin Ngongang, software developer in Germany.">
+    <title>Kevin Ngongang — Software Developer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <article class="business-card" aria-labelledby="card-name">
+        <div class="portrait-frame">
+          <img
+            class="portrait"
+            src="images/kevin.jpeg"
+            alt="Portrait of Kevin Ngongang"
+            width="1217"
+            height="1577"
+          >
         </div>
-    </body>
+
+        <section class="profile">
+          <p class="eyebrow">Hello, I’m</p>
+          <h1 id="card-name">Kevin Ngongang</h1>
+          <p class="role">Software Developer</p>
+          <p class="location">Germany</p>
+          <a class="email" href="mailto:contact@kevinpaulidor.de">
+            contact@kevinpaulidor.de
+          </a>
+
+          <nav class="actions" aria-label="Kevin Ngongang links">
+            <a class="button button-primary" href="https://www.kevinngongang.dev" target="_blank" rel="noopener noreferrer">Portfolio</a>
+            <a class="button button-secondary" href="https://github.com/bakadja" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button button-secondary" href="mailto:contact@kevinpaulidor.de">Contact</a>
+          </nav>
+        </section>
+
+        <a
+          class="qr-link"
+          href="https://www.kevinngongang.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Kevin Ngongang’s portfolio"
+        >
+          <img
+            class="qr-code"
+            src="images/qrcode.svg"
+            alt="QR code for Kevin Ngongang’s portfolio"
+            width="180"
+            height="180"
+          >
+          <span>Scan for portfolio</span>
+        </a>
+      </article>
+    </main>
+  </body>
 </html>
