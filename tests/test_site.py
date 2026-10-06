@@ -57,8 +57,25 @@ class LandingPageTests(unittest.TestCase):
             self.assertEqual(link.get("target"), "_blank")
             self.assertEqual(set(link.get("rel", "").split()), {"noopener", "noreferrer"})
 
-        contact = next(attrs for attrs in links if attrs.get("href") == "mailto:contact@kevinpaulidor.de" and attrs.get("class") == "button button-secondary")
-        self.assertIsNotNone(contact)
+        email_link = next(
+            attrs
+            for attrs in links
+            if attrs.get("href") == "mailto:contact@kevinpaulidor.de"
+            and attrs.get("class") == "email"
+        )
+        self.assertIsNotNone(email_link)
+
+        contact = next(
+            attrs
+            for attrs in links
+            if attrs.get("href") == "https://www.kevinngongang.dev/#contact"
+            and attrs.get("class") == "button button-secondary"
+        )
+        self.assertEqual(contact.get("target"), "_blank")
+        self.assertEqual(
+            set(contact.get("rel", "").split()),
+            {"noopener", "noreferrer"},
+        )
 
     def test_document_has_accessible_semantics_and_images(self):
         html_attrs = self.attributes_for("html")
